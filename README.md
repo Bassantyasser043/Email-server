@@ -1,5 +1,11 @@
 # Email-server
 
+## Team-mates:
+1- Mai Ahmed Hussein
+2- Habiba Osama
+3- Bassant Yasser
+4- Toka Ashraf
+
 ## 1-Running Angular:
 
 1.  Unzip downloaded file.
