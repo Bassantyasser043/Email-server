@@ -36,7 +36,11 @@
 1-Run Angular Code while Running Spring boot program to be able to receive data from the front end.
 
 2- As shown the picture this page will appear in the browser which contains Email interface as shown in fig.1
-
+## Contributers:
+* [Mai Ahmed Hussein](https://github.com/MaiAhmedHussein)
+* [Habiba Osama](https://github.com/habibaosama)
+* [Bassant Yasser](https://github.com/Bassantyasser043)
+* [Toka Ashraf](https://github.com/TokaAshraf12)
   
   
   
