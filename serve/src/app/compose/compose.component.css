@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    background: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    border: solid rgb(136, 51, 161) 5px;
+    border-radius: 7px;
+    min-height: 97%;
+    margin-top: 5px;
+    display: grid;
+    grid-template-rows: 5% 5% 5% 58% 10% 10%;
+  } 
+  i{
+    background: whitesmoke;
+  }
+  #toContainer {
+    grid-row: 1/2;
+  }
+  #subjectContainer {
+    grid-row: 2/3;
+  }
+  #mailContainer {
+    grid-row: 4/5;
+  }
+  #attachsContainer {
+    grid-row: 5/6;
+  }
+  #submitContainer {
+    grid-row: 6/7;
+  }
+  label {
+    box-sizing: border-box;
+    width: 20%;
+    text-align: center;
+    padding: 6px;
+    font-weight: 500;
+  }
+  label[for="toInput"],
+  label[for="subInput"],
+  label[for="priorityInput"],
+  #toInput,
+  #subInput,
+  #priorityInput{
+    border-bottom: solid 5px rgb(136, 51, 161);
+  }
+  label:hover {
+    transition-duration: 0.2s;
+    color: rgb(99, 10, 117);
+  }
+  input {
+    box-sizing: border-box;
+    border: none;
+    width: 93%;
+    padding: 5px;
+    height: 100%;
+  }
+  input:focus,
+  textarea:focus {
+    outline: none;
+    background: white;
+  }
+  .comp {
+    display: flex;
+    flex-direction: row;
+    height: 130%;
+    margin: auto;
+    text-align: center;
+  }
+  textarea {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 93%;
+    margin: 8px 0px;
+    border: none;
+    height: 90%;
+  }
+  #mail {
+    height: 300px;
+  }
+  button {
+    width: 70px;
+    margin: auto 25px;
+    border: solid rgb(54, 4, 65) 0.7px;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    height: 50%;
+  }
+  button:hover {
+    transition-duration: 0.3s;
+    border-color: whitesmoke;
+    border-bottom-color: rgb(69, 11, 77);
+    color: rgb(66, 6, 61);
+    cursor: pointer;
+    outline: none;
+  }
+  button:active {
+    transition-duration: 0.1s;
+    border-color: whitesmoke;
+    border-bottom-color: rgb(80, 13, 94);
+    color: rgb(73, 15, 85);
+    cursor: pointer;
+    outline: none;
+  }
+  button:focus {
+    outline: none;
+  }
+  #submit {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #priorityInput{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  input[type="radio"]{
+    width: 15px;
+    margin-left: 5px;
+  }
+  .radioLabel{
+    width: 65px;
+    padding-left: 3px;
+    text-align: left;
+  }
+  .radioLabel:hover{
+    transition-duration: 0.5s;
+    color: rgb(196, 106, 214);
+  }
+  #files{
+    width: 300%;
+    overflow: auto;
+    
+  }
+  #files button{
+    margin: 5px;
+    padding: 0;
+    border: none;
+    color: black;
+    width:auto;
+  }
+  #files button:hover{
+    color: #af4cdd;
+  }

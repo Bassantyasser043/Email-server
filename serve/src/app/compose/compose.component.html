@@ -1,0 +1,49 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+<div id="toContainer">
+  <div class="comp" id="to">
+    <label class="fieldLabel" for="toInput">To</label>
+    <input type="text" id="toInput" v-model="to" placeholder="enter your reciever">
+  </div>
+</div>
+<div id="subjectContainer">
+  <div class="comp" id="subject">
+    <label class="fieldLabel" for="subInput">Subject</label>
+    <input type="text" id="subInput" v-model="subject" placeholder="enter subjest">
+  </div>
+</div>
+
+
+<div id="mailContainer">
+  <div class="comp" id="mail">
+    <label class="fieldLabel" for="mailInput">Topic</label>
+    <textarea name="mail content" id="mailInput" v-model="mail" cols="20" rows="5" placeholder="Write your Email.."></textarea>
+  </div>
+</div>
+
+<div id="attachsContainer">
+  <div class="comp" id="attachs">
+    <label class="fieldLabel" for="fileInput" >Attachments</label>
+
+    <div id="files" >
+        <input type="file" id="filesss" (change)="onFileUpload($event)" multiple style="width: 100%;"  name="files" ><br><br>
+        <ng-container *ngFor="let f of files;let i = index ">           
+           <button (click)="removeFile(i)"><i id="x" class="material-icons">&#xe5c9;</i></button> 
+                  <button  (click)="viewFile(f)" >{{f.name}}</button>
+        </ng-container>
+      </div>
+   
+  </div>
+</div>
+<input type="text" id="priority" style="background-color: rgb(161, 97, 97); width:20px;height: 20px;left:700px">
+<div id="submitContainer">
+  <div class="comp" id="submit">
+    <button v-if="canSend"  id="b" (click)="send('compose')" routerLink='/home'><i id="a" class="material-icons">&#xe163;</i>Send</button>
+    <button v-if="canSend" (click)="send('draft')" id="d" routerLink='/home'><i id="c" class="material-icons"></i>Back</button>
+   <button v-if="canSend"  id="d" routerLink='/trash'><i id="c" class="material-icons"></i>trash</button>
+  </div>
+</div>
+
+</body>
+<router-outlet></router-outlet>

@@ -1,0 +1,46 @@
+
+    <table  class="brand3" >
+     <thead style="border-right: 100px;" >
+      <button v-if="canSend"  id="d" routerLink='/home'><i id="c" class="material-icons"></i>Back</button>
+     <tr ><input type="checkbox" (click)="CheckAllOptions()" name="list_name"><strong>Select/ Unselect All </strong>
+      <img (click)="movetrash()" style="width:20px;height:20px;margin-left: 80px;" src="https://pngset.com/images/trash-garbage-recycle-bin-trash-bin-icon-stencil-symbol-logo-trademark-transparent-png-967562.png">
+      <img  style="width:20px;height:20px;margin-left: 120px;" src="https://static.thenounproject.com/png/24259-200.png">
+    </tr>
+     <tbody >
+     <tr *ngFor="let item of IIInbox" style=" border: 1px solid black;width:100px;height:70px" class="tr" >
+        
+       <input type="checkbox" style="justify-content: center;align-items: center;" name ="item.contact_name" [(ngModel)]="item.selected" (click)="select(item.selected,item.contact_name)"  [value]="item.contact_name" >
+         <a  style="border-width:50px solid;justify-content: center;align-items: center;" style="line-height:30px;" (click)="getindex(item.primary_email)" id="inbox-icon"><span style="margin-right: 10em;"><strong>{{item.contact_name}}</strong></span> <span style="margin-right: 20em;">{{item.primary_email}} </span> </a>
+         <button>Edit Contact</button><button>Delete Contact</button>
+         <div id="inbox-menu">
+          <div id="inbox-btn" (click)="Exitfolder()">Exit</div>
+
+          <a>
+          <font size="+3.5" style="color:black; margin-left:10px;"> </font>  <a  style="font-size:20px; margin-left:20px;">{{message_reciv}}</a>
+           <br>
+          <font size="+3.5" style="color:black;margin-left:10px;"> </font>  <a style="font-size:20px; margin-left:20px;">{{Sentence}}</a><a style="font-size:20px; margin-left:20px;"></a>
+         
+        </a>
+
+      </div>
+       </tr>
+      </tbody>
+    </table>
+    <div id="right-side" class="info">
+      
+    </div>
+    <a href="#" class="float" id = "compose" click="compose()"  routerLink='/compose' routerLinkActive="Active">   Compose</a>
+  <nav>
+    <a href="#" class="floatsignout" id="sign-out"  routerLink="/signin"> Sign out</a>
+  </nav>
+      
+   
+           
+        
+          <div class="buttonpage">
+            <a style="color: black;font-size: 100;"><strong>{{this.page}}</strong></a>
+            <button class="buttonpage" (click)="pagenumber(-1)"><< Previous</button>  <button class="buttonpage" style="margin-left: 50px;" (click)="pagenumber(1)"> Next >></button>
+          </div>
+  <router-outlet></router-outlet>
+  
+  
