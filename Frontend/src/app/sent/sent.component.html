@@ -1,0 +1,148 @@
+<nav>
+  <div id="home">
+   
+    <div id="upper-bar">
+     
+      <div id="filtering" v-if="component !== 'contact-view'">
+        <div id="filter" (click)="clickFilter()">Filter Mails&nbsp;<i class="fas fa-caret-down check-icon" id="check-icon"></i></div>
+        <div id="check-menu">
+          <div>
+          <label >Sender :  </label>
+          <input type="text" id="sender-filter">
+          </div>
+          <div>
+          <label>Subject :  </label>
+          <input type="text" id="subject-filter">
+          </div>
+          <div id="filter-btn" (click)="Filter()">Filter</div>
+        </div>
+      </div>
+      
+      <br>
+      <div id="right-side" class="info">
+        <div id="account-menu">
+          <div id="account" (mouseover)="display()" (mouseout)="hide()"></div>
+          <br>
+          <div id="account-info">
+            <div>
+              <div>Name</div>
+              <div id="name">Toka Ashraf</div>
+            </div>
+            <div>
+              <div>Email</div>
+              <div id="email" >{{this.email}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+    </div >
+    <table  class="brand3" >
+     <thead style="border-right: 100px;" >
+     <tr ><input type="checkbox" (click)="CheckAllOptions()" name="list_name"><strong>Select/ Unselect All </strong>
+      <img (click)="movetrash()" style="width:20px;height:20px;margin-left: 80px;" src="https://pngset.com/images/trash-garbage-recycle-bin-trash-bin-icon-stencil-symbol-logo-trademark-transparent-png-967562.png">
+      <img  style="width:20px;height:20px;margin-left: 120px;" src="https://static.thenounproject.com/png/24259-200.png">
+    </tr>
+     <tbody >
+     <tr *ngFor="let item of IIInbox" style=" border: 1px solid black;" class="tr" >
+        
+       <input type="checkbox" name ="item.id" [(ngModel)]="item.selected" (click)="select(item.selected,item.id)"  [value]="item.id" >
+         <a  style="border-width:50px solid" style="line-height:30px;" (click)="getindex(item.id)" id="inbox-icon"><span style="margin-right: 10em;"><strong>{{item.receiver}}</strong></span> <span style="margin-right: 20em;">{{item.subject}} </span> {{item.body}} </a>
+         <div id="inbox-menu">
+          <div id="inbox-btn" (click)="Exitfolder()">Exit</div>
+
+          <a>
+          <font size="+3.5" style="color:black; margin-left:10px;"> Receiver:</font>  <a  style="font-size:20px; margin-left:20px;">{{message_reciv}}</a>
+           <br>
+          <font size="+3.5" style="color:black;margin-left:10px;"> Subject:</font>  <a style="font-size:20px; margin-left:20px;">{{Sentence}}</a>
+          <hr color="black">
+          <font size="+3.5" style= "margin-left:10px;"> Body:</font>  <a style="font-size:20px; margin-left:20px;">{{sub}}</a>
+          </a>
+
+      </div>
+       </tr>
+      </tbody>
+    </table>
+    <div id="right-side" class="info">
+      
+    </div>
+    <a href="#" class="float" id = "compose" click="compose()"  routerLink='/compose' routerLinkActive="Active">   Compose</a>
+  <nav>
+    <a href="#" class="floatsignout" id="sign-out"  routerLink="/signin"> Sign out</a>
+  </nav>
+      
+  <div id="body">
+    <div id="menu">
+      <div id="userFoldersList" v-if="openUserFolders">
+        <div id="backToMenu" (click)="refresh()" ><i class="fas fa-arrow-alt-circle-left"></i>  Refresh</div>
+        <div id="renaming" >
+          <ul id="renam" (click)="renamefolder()">Rename folder&nbsp;<i  id="rename-folder"></i></ul>
+          <div id="r-menu">
+            <div>
+            <label >Old Name :  </label>
+            <input type="text" id="oldname">
+            </div>
+            <div>
+              <label >New Name :  </label>
+              <input type="text" id="newname">
+              </div>
+           
+            <div id="filter-btn" (click)="okrename()">ok</div>
+          </div>
+        </div>
+        </div>
+        <div id="deleting" >
+          <ul id="delet" (click)="deletefolder()">Delete folder&nbsp;<i  id="delete-folder"></i></ul>
+          <div id="delete-menu">
+            <div>
+            <label >Name :  </label>
+            <input type="text" id="deletename">
+            </div>
+            <div>
+            <div id="filter-btn" (click)="okdelete()">OK</div>
+          </div>
+        </div>
+        <!---------------------------->
+        <div id="moving" >
+          <ul id="movee" (click)="clickmove()">Move to folder&nbsp;<i  id="move-folder"></i></ul>
+          <div id="move-menu">
+            <div>
+            <label >Folder Name :  </label>
+            <input type="text" id="movename">
+            </div>
+            <div>
+            <div id="filter-btn" (click)="okmove()">OK</div>
+          </div>
+        </div>
+        </div>
+         <!------------------------------------------->      </div>
+          <div class="buttonpage">
+            <a style="color: black;font-size: 100;"><strong>{{this.page}}</strong></a>
+            <button class="buttonpage" (click)="pagenumber(-1)"><< Previous</button>  <button class="buttonpage" style="margin-left: 50px;" (click)="pagenumber(1)"> Next >></button>
+          </div>
+  
+        <li id="menuList" class="menu-styling" >     
+          <ul style="font-size:large;" (click)="Clickfolder()" >Create New File<i class="fas fa-caret-down check-icon" id="c-icon"></i></ul>
+          <div id="c-menu">
+            <label >NAME :  </label>
+            <input type="text" id="sender-folder">
+            <div id="filter-btn" (click)="createfolder()">OK</div>
+          </div>
+          <ul routerLink='/folder' routerLinkActive="Active"  ><span><i class="fas fa-inbox"></i> Folders</span></ul>
+          <ul routerLink='/home' routerLinkActive="Active" ><span><i class="fas fa-inbox"></i> Inbox</span></ul>
+          <ul ><span routerLink='/draft' routerLinkActive="Active"><i class="fas fa-archive" ></i> Draft</span></ul>
+          <ul ><span routerLink='/sent' routerLinkActive="Active"><i class="fas fa-share-square" ></i> Sent</span></ul>
+          <ul><span routerLink='/trash' routerLinkActive="Active"><i class="fas fa-trash-alt" ></i> Trash</span></ul>
+         
+        </li>
+        <div id="contacts-menu" >
+          <div id="add-contact" routerLink='/addcontact' routerLinkActive="Active" ><i class="fas fa-user-plus icon" ></i>  ADD CONTACT</div>
+          <div id="my-contacts" routerLink='/contactview' routerLinkActive="Active" ><i class="fas fa-user-friends icon"></i>    CONTACTS</div>
+        </div>
+      </div>
+    </div>
+  </div></nav>
+  <router-outlet></router-outlet>
+  
+  
