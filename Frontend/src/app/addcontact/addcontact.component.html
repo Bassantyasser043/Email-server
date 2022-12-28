@@ -1,0 +1,26 @@
+<nav>
+    <div class="modal-mask">
+      <button v-if="canSend" (click)="back()" id="d"><i id="c" class="button"></i>&laquo;X</button>
+    
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="header">
+              Add Contact
+            </div>
+              <label for="name"></label>
+              <input type="text" placeholder="Name" name="name" id="name" required>
+            <div id="mails">
+              <label for="primaryEmail"></label>
+              <input type="text" placeholder="Primary Email" name="email" id="primaryEmail">
+            </div>
+            <button class="add-secondary-mail" id="primaryEmail" >
+              + Add more mails
+            </button>
+              <button class="modal-default-button" (click)="Finished()">
+                  OK
+                </button>
+            </div>
+        </div>
+      </div>
+    </nav>
+      <router-outlet></router-outlet>

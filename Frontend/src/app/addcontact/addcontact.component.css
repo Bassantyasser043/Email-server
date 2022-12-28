@@ -1,0 +1,104 @@
+/*   modal mask is the class for the page that appear when click (background)
+    */
+    .modal-mask {
+        position: fixed;
+        z-index: 999999999999999999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: table;
+        transition: opacity 0.3s ease;
+        }
+        /*
+        class for the contact box position
+        */
+        .modal-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        }
+        .modal-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+        transition: all 0.3s ease;
+        font-family: Helvetica, Arial, sans-serif;
+        }
+        .modal-default-button {
+             /*gradient for the button    */
+          background: linear-gradient(to right,#210535,purple);
+          color: white;
+          font-size: 15px;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+           /*pointer shape*/
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+          outline: none;
+          border-radius: 30px;
+        }
+        /*
+        * The following styles are auto-applied to elements with
+        * transition="modal" when their visibility is toggled
+        * by Vue.js.
+        *
+        * You can easily play with the modal transition by editing
+        * these styles.
+        */
+        .modal-enter {
+        opacity: 0;
+        }
+        .modal-leave-active {
+        opacity: 0;
+        }
+        .modal-enter .modal-container,
+        .modal-leave-active .modal-container {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        }
+        /* Full-width input fields */
+        input[type=text] {
+          width: 100%;
+          padding: 5px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          border-bottom: grey 1px solid;
+        }
+        input[type=text]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        .add-secondary-mail{
+          outline: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          color: #430D4B;
+          font-size: 17px;
+        }
+        .header{
+          text-align: center;
+          font-size: 20px;
+          font-family: "Arial Rounded MT Bold",sans-serif;
+          font-weight: bold;
+        }
+        .back:hover{
+          font-size: 24px;
+          background-color: #000000;
+          border-radius: 50%;
+          margin-left:50px;
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+          float: left;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          color: Black;
+        }
+        

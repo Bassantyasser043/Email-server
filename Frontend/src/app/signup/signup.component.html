@@ -1,0 +1,31 @@
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Join Us</h1>
+		<span>
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Sign Up</h5>
+    <nav>
+		<p>You have an account already? <a routerLink='/signin' routerLinkActive="Active">Sign in</a></p>
+		<div class="inputs">
+			<input type="text" placeholder="First Name" id="fname">
+      <input type="text" placeholder="Last Name" id="lname">
+      <input type="text" placeholder="Email" id="address">
+			<input type="text" placeholder="Birthday" id="birthday">
+			<br>
+			<input type="password" placeholder="password" id="password">
+		</div>
+			
+			<br><br>
+			<br>
+			<button (click)="submit()">Sign Up</button>
+    </nav>
+	</div>
+	
+</div>
+<router-outlet></router-outlet>
